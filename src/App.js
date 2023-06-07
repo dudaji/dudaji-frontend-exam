@@ -6,7 +6,8 @@ function App() {
   const [todo, setTodo] = useState([]);
   const [inputValue, setInputValue] = useState('');
   const [editTodo, setEditTodo] = useState(null);
-  const baseURL = apiClient('https://todo.stage.dudaji.com');
+  // const baseURL = apiClient('https://todo.stage.dudaji.com');
+  const baseURL = apiClient('http://localhost:8080');
 
   useEffect(() => {
     fetchTodo();
@@ -66,10 +67,12 @@ function App() {
     };
   };
 
-  const handleDeleteTodo = async (name) => {
+  const handleDeleteTodo = async (id) => {
     try {
-      await baseURL.delete(`/api/v1/todo/${encodeURIComponent(name)}`);
+      await baseURL.delete(`/api/v1/todo/${id}`);
       fetchTodo();
+      setInputValue('');
+      setEditTodo(null);
     } catch (error) {
       console.log(error);
     }
@@ -99,7 +102,7 @@ function App() {
               {item.name}
               <div>
                 <button onClick={() => handleEditTodo(item)}>Edit</button>
-                <button onClick={() => handleDeleteTodo(item.name)}>Delete</button>
+                <button onClick={() => handleDeleteTodo(item.id)}>Delete</button>
               </div>
             </li>
           ))}
