@@ -104,15 +104,21 @@ function TodoList() {
           <button onClick={handleAddTodo}>Add</button>
         )}
         <ul>
-          {todo.map((item) => (
+        {todo.map((item) => (
             <li key={item.id} onClick={() => handleItemClick(item)}>
-              {item.name}
-              <div>
-                <button onClick={() => handleEditTodo(item)}>Edit</button>
-                <button onClick={() => handleDeleteTodo(item.id)}>Delete</button>
-              </div>
+                {item.name}
+                <div>
+                <button onClick={(event) => {
+                    event.stopPropagation();
+                    handleEditTodo(item);
+                }}>Edit</button>
+                <button onClick={(event) => {
+                    event.stopPropagation();
+                    handleDeleteTodo(item.id);
+                }}>Delete</button>
+                </div>
             </li>
-          ))}
+            ))}
         </ul>
       </div>
     </div>
