@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import './App.css';
-import apiClient from './apiClient';
+import '../App.css';
+import apiClient from '../apiClient';
+import { useNavigate } from 'react-router-dom';
 
-function App() {
+
+function TodoList() {
   const [todo, setTodo] = useState([]);
   const [inputValue, setInputValue] = useState('');
   const [editTodo, setEditTodo] = useState(null);
   // const baseURL = apiClient('https://todo.stage.dudaji.com');
   const baseURL = apiClient('http://localhost:8080');
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchTodo();
@@ -67,6 +70,10 @@ function App() {
     };
   };
 
+  const handleItemClick = (item) => {
+    navigate(`/TodoDetail/${item.id}`, {state : item});
+  };
+
   const handleDeleteTodo = async (id) => {
     try {
       await baseURL.delete(`/api/v1/todo/${id}`);
@@ -98,7 +105,7 @@ function App() {
         )}
         <ul>
           {todo.map((item) => (
-            <li key={item.id}>
+            <li key={item.id} onClick={() => handleItemClick(item)}>
               {item.name}
               <div>
                 <button onClick={() => handleEditTodo(item)}>Edit</button>
@@ -112,4 +119,4 @@ function App() {
   );
 }
 
-export default App;
+export default TodoList;
