@@ -4,7 +4,7 @@ WELCOME-FRONTEND-EXAM
 2. yarn start 로 실행시켜 보세요.
 3. styleguide를 적용해보세요.
 4. yarn add 를 이용하여 필요한 라이브러리(axios) 설치하세요. 
-5. api doc (https://www.notion.so/dudaji/TODO-App-API-Doc-a61f9d3ddd0f41649c0b1cf9a3b715f8)을 참고하여 코드에 부족한 부분을 보완해 보세요.
+5. api doc (https://www.notion.so/dudaji/TODO-App-API-Doc-a61f9d3ddd0f41649c0b1cf9a3b715f8) 을 참고하여 코드에 부족한 부분을 보완해 보세요.
     - 비동기 처리 참고(https://www.notion.so/dudaji/Javascript-7adf92d58c63474a964686b1df57a2cf)
 6. useEffect와 console.log를 이용하여 웹 inspector에서 todo 데이터를 확인해 보세요.
     - useEffect(https://www.notion.so/dudaji/React-lifecycle-341f25d68edd4c8f88e0231a54905c8e)
