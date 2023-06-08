@@ -4,7 +4,6 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import TodoList from './pages/TodoList';
-import TodoDetail from './pages/TodoDetail';
 
 
 const router = createBrowserRouter([
@@ -19,10 +18,6 @@ const router = createBrowserRouter([
       {
         path: "/todoList",
         element: <TodoList />,
-      },
-      {
-        path: "/todoDetail/:Id",
-        element: <TodoDetail />,
       },
     ],
   },

@@ -25,64 +25,31 @@ function TodoList() {
     }
   };
 
+
   const handleInputChange = (e) => {
-    setInputValue(e.target.value);
+    
   };
 
-  const handleAddTodo = async () => {
-    if (inputValue.trim() !== '') {
-      try {
-        const newTodo = {
-          name: inputValue,
-          status: 'proceeding',
-          description: inputValue,
-        };
-        await baseURL.post('/api/v1/todo', newTodo);
-        setInputValue('');
-        fetchTodo();
-      } catch (error) {
-        console.log(error);
-      }
-    }
+  const handleAddTodo = () => {
+    
   };
 
-  const handleEditTodo = (todo) => {
-    setEditTodo(todo);
-    setInputValue(todo.name);
+  const handleEditTodo = () => {
   };
 
   const handleCancelEdit = () => {
-    setEditTodo(null);
-    setInputValue('');
   };
 
-  const handleUpdateTodo = async () => {
-    if (inputValue.trim() !== '' && editTodo !== null) {
-      try {
-        const updatedTodo = { ...editTodo, name: inputValue };
-        await baseURL.put(`/api/v1/todo`, updatedTodo);
-        setInputValue('');
-        setEditTodo(null);
-        fetchTodo();
-      } catch (error) {
-        console.log(error);
-      }
-    };
+  const handleUpdateTodo = () => {
+    
   };
 
-  const handleItemClick = (item) => {
-    navigate(`/TodoDetail/${item.id}`, {state : item});
+  const handleItemClick = () => {
+    
   };
 
-  const handleDeleteTodo = async (id) => {
-    try {
-      await baseURL.delete(`/api/v1/todo/${id}`);
-      fetchTodo();
-      setInputValue('');
-      setEditTodo(null);
-    } catch (error) {
-      console.log(error);
-    }
+  const handleDeleteTodo = () => {
+    
   };
 
   return (
