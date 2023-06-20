@@ -6,7 +6,6 @@ function TodoList() {
   const [inputValue, setInputValue] = useState("");
   const [editTodo, setEditTodo] = useState(null);
 
-
   const fetchTodoList = () => {}
 
   const handleInputChange = () => {}
@@ -26,6 +25,10 @@ function TodoList() {
   useEffect(() => {
     fetchTodoList();
   }, [todoList]);
+
+  useEffect(() => {
+    fetchTodo();
+  }, []);
 
   return (
     <div className="App">
@@ -50,14 +53,22 @@ function TodoList() {
                 <button onClick={(event) => {
                     event.stopPropagation();
                     handleEditTodo(item);
-                }}>Edit</button>
-                <button onClick={(event) => {
+                  }}
+                >
+                  Edit
+                </button>
+                <button
+                  type="button"
+                  onClick={event => {
                     event.stopPropagation();
                     handleDeleteTodo(item.id);
-                }}>Delete</button>
-                </div>
+                  }}
+                >
+                  Delete
+                </button>
+              </div>
             </li>
-            ))}
+          ))}
         </ul>
       </div>
     </div>
