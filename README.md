@@ -16,7 +16,7 @@
    - console 사용하지 않음
 3. todo add 기능이 동작하도록 구현해주세요.
 4. todo detail page 구현해주세요. (name, status, description 모두 볼 수 있는 페이지)
-   ! `react-router-dom` 을 사용해 페이지 이동이 되도록 구현해주세요.
+   - `react-router-dom` 을 사용해 페이지 이동이 되도록 구현해주세요.
 5. todo detail page 에서 수정 제거 버튼을 추가하고, 기능이 동작되도록 구현해주세요.
 6. todo list 페이지에 있는 모든 state 를 redux를 이용하여 상태 관리하도록 수정해주세요.
 7. 적용한 redux 의 실행 순서를 서술하십시오. 실행 순서 확인을 어떻게 했는지도 작성해주세요.
